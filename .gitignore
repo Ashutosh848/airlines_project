@@ -1,0 +1,6 @@
+# Ignore specific files inside the dbt_project folder
+project_airlines/profiles.yml
+project_airlines/dbt_project.yml
+venv/
+project_airlines/.user.yml
+

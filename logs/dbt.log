@@ -1,0 +1,96 @@
+[0m20:33:36.543788 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78a38c9c0430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78a38b9378e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78a38b937880>]}
+
+
+============================== 20:33:36.548495 | 87ffe768-89dc-4476-8534-b92bcebc9a6a ==============================
+[0m20:33:36.548495 [info ] [MainThread]: Running with dbt=1.10.4
+[0m20:33:36.549814 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/dell/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'invocation_command': 'dbt init', 'send_anonymous_usage_stats': 'True'}
+[0m20:33:58.385004 [debug] [MainThread]: Starter project path: /home/dell/Documents/project_databricks/venv/lib/python3.10/site-packages/dbt/include/starter_project
+[0m20:33:58.399775 [info ] [MainThread]: 
+Your new dbt project "project_airlines" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m20:33:58.403577 [info ] [MainThread]: Setting up your profile.
+[0m20:34:04.358310 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m20:34:04.359075 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m20:34:04.359870 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m20:34:10.040762 [error] [MainThread]: Encountered an error:
+
+[0m20:34:10.047138 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/dell/Documents/project_databricks/venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/dell/Documents/project_databricks/venv/lib/python3.10/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+  File "/home/dell/Documents/project_databricks/venv/lib/python3.10/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+  File "/home/dell/Documents/project_databricks/venv/lib/python3.10/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/home/dell/Documents/project_databricks/venv/lib/python3.10/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/home/dell/Documents/project_databricks/venv/lib/python3.10/site-packages/dbt/task/init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/home/dell/Documents/project_databricks/venv/lib/python3.10/site-packages/dbt/task/init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "/home/dell/Documents/project_databricks/venv/lib/python3.10/site-packages/dbt/task/init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+  File "/home/dell/Documents/project_databricks/venv/lib/python3.10/site-packages/click/termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+  File "/home/dell/Documents/project_databricks/venv/lib/python3.10/site-packages/click/termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m20:34:10.053781 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 33.603745, "process_in_blocks": "104", "process_kernel_time": 0.237496, "process_mem_max_rss": "214792", "process_out_blocks": "80", "process_user_time": 3.593382}
+[0m20:34:10.058209 [debug] [MainThread]: Command `dbt init` failed at 20:34:10.057403 after 33.61 seconds
+[0m20:34:10.060978 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78a38c9c0430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78a374fc5ba0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78a374fc5e70>]}
+[0m20:34:10.063569 [debug] [MainThread]: Flushing usage events
+[0m20:34:18.597895 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7248290a8430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724827ff7940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724827ff78e0>]}
+
+
+============================== 20:34:18.601183 | a5d892c3-34ca-4fa8-8154-55fc3a6a37c2 ==============================
+[0m20:34:18.601183 [info ] [MainThread]: Running with dbt=1.10.4
+[0m20:34:18.602227 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': '/home/dell/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt debug', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:34:18.615199 [info ] [MainThread]: dbt version: 1.10.4
+[0m20:34:18.616504 [info ] [MainThread]: python version: 3.10.12
+[0m20:34:18.617973 [info ] [MainThread]: python path: /home/dell/Documents/project_databricks/venv/bin/python3
+[0m20:34:18.619004 [info ] [MainThread]: os info: Linux-6.8.0-60-generic-x86_64-with-glibc2.35
+[0m20:34:18.630847 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.mysql'
+[0m20:34:18.632017 [info ] [MainThread]: Using profiles dir at /home/dell/.dbt
+[0m20:34:18.632710 [info ] [MainThread]: Using profiles.yml file at /home/dell/.dbt/profiles.yml
+[0m20:34:18.633264 [info ] [MainThread]: Using dbt_project.yml file at /home/dell/Documents/project_databricks/dbt_project.yml
+[0m20:34:18.633840 [info ] [MainThread]: Configuration:
+[0m20:34:18.634550 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m20:34:18.635070 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m20:34:18.635667 [info ] [MainThread]: Required dependencies:
+[0m20:34:18.636443 [debug] [MainThread]: Executing "git --help"
+[0m20:34:18.640580 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m20:34:18.642162 [debug] [MainThread]: STDERR: "b''"
+[0m20:34:18.643378 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m20:34:18.644665 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m20:34:18.646764 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m20:34:18.648535 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "testing_databricks", target "dev" invalid: Runtime Error
+    Could not find adapter type mysql!
+
+
+[0m20:34:18.650051 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/dell/Documents/project_databricks/dbt_project.yml> not found
+
+[0m20:34:18.652783 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.13713327, "process_in_blocks": "0", "process_kernel_time": 0.118996, "process_mem_max_rss": "95772", "process_out_blocks": "8", "process_user_time": 1.996936}
+[0m20:34:18.654063 [debug] [MainThread]: Command `dbt debug` failed at 20:34:18.653813 after 0.14 seconds
+[0m20:34:18.655064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7248290a8430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724827ff78b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724827ffff10>]}
+[0m20:34:18.656282 [debug] [MainThread]: Flushing usage events
+[0m20:34:19.755369 [debug] [MainThread]: An error was encountered while trying to flush usage events
