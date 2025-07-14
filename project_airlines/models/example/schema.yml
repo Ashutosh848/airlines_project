@@ -2,10 +2,10 @@
 version: 2
 
 models:
-  - name: cleaned_airports
+  - name: bookings_dbt
     description: "Sample data of Airports"
     columns:
-      - name: airport_id
+      - name: booking_id
         description: "The primary key for this table"
         data_tests:
           - unique
@@ -17,5 +17,5 @@ sources:
   - name: bronze
     schema: bronze
     tables:
-      - name: airports_raw
+      - name: bookings_raw
 
