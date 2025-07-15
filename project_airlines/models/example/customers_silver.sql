@@ -1,5 +1,10 @@
 -- models/airports_cleaned.sql
-{{ config(schema='silver', materialized='incremental') }}
+{{ config(
+    schema='silver',
+    materialized='incremental',
+    incremental_strategy='merge',
+    unique_key = 'passenger_id'
+) }}
 
 
 SELECT *
