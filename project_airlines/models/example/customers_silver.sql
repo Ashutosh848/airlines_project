@@ -7,11 +7,17 @@
 ) }}
 
 
-SELECT *
+SELECT 
+  passenger_id,
+  name,
+  gender,
+  nationality,
+  _rescued_data,
+  updated_at as created_at
 FROM {{ source('bronze', 'customers_raw') }}
 {% if is_incremental() %}
-  WHERE updated_at > (
-    SELECT max(updated_at)
+  WHERE created_at > (
+    SELECT max(created_at)
     FROM {{ this }}
   )
 {% endif %}

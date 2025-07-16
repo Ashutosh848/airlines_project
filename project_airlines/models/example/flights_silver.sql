@@ -14,11 +14,11 @@ SELECT
     destination,
     CAST(flight_date as DATE) as flight_date,
     _rescued_data,
-    updated_at
+    updated_at as created_at
 FROM {{ source('bronze', 'flights_raw') }}
 {% if is_incremental() %}
-  WHERE updated_at > (
-    SELECT max(updated_at)
+  WHERE created_at > (
+    SELECT max(created_at)
     FROM {{ this }}
   )
 {% endif %}
