@@ -1,4 +1,3 @@
--- models/airports_cleaned.sql
 {{ config(
     schema='silver', 
     materialized='incremental', 
@@ -14,12 +13,5 @@ SELECT
     airport_id,
     CAST(amount as FLOAT) as amount,
     CAST(booking_date as date) as booking_date,
-    _rescued_data,
-    updated_at
+    updated_at as created_at
 FROM {{ source('bronze', 'bookings_raw') }}
-{% if is_incremental() %}
-  WHERE updated_at > (
-    SELECT max(updated_at)
-    FROM {{ this }}
-  )
-{% endif %}
