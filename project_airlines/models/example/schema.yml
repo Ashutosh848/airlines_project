@@ -1,15 +1,15 @@
 
 version: 2
 
-models:
-  - name: bookings_silver
-    description: "Sample data of Airports"
-    columns:
-      - name: booking_id
-        description: "The primary key for this table"
-        data_tests:
-          - unique
-          - not_null
+# models:
+#   - name: bookings_silver
+#     description: "Sample data of Airports"
+#     columns:
+#       - name: booking_id
+#         description: "The primary key for this table"
+#         data_tests:
+#           - unique
+#           - not_null
 
   
 
@@ -17,27 +17,8 @@ sources:
   - name: bronze
     schema: bronze
     tables:
-      - name: bookings_raw
-        description: "Raw bookings data ingested from source system"
-        columns:
-          - name: booking_id
-            description: "Primary key for bookings"
-
-      - name: customers_raw
-        description: "Raw customers data ingested from source system"
-        columns:
-          - name: customer_id
-            description: "Primary key for customers"
-
       - name: flights_raw
         description: "Raw flights data ingested from source system"
         columns:
           - name: flight_id
             description: "Primary key for flights"
-      
-      - name: airports_raw
-        description: "Raw airport data"
-        columns:
-          - name: airport_id
-            description: "Primary Key for airports"
-      
