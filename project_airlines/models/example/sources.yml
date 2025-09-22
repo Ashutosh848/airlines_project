@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: bronze_core
+    schema: core
+    database: bronze
+    tables:
+      - name: helper_table
+        columns:
+          - name: table_name
+          - name: schema_name
+          - name: identified_template_name
+          - name: processing_status
+          - name: created_at
+          - name: updated_at
+          
+      - name: config_table
+        columns:
+          - name: table_name
+          - name: schema_name
+          - name: template_name
+          - name: status
+          - name: last_updated
+          
+      - name: config_file
+        columns:
+          - name: table_name
+          - name: schema_name
+          - name: template_name
+          - name: status
+          - name: last_updated
