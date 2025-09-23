@@ -3,9 +3,7 @@
     pre_hook="{{ execute_config_updates() }}"
 ) }}
 
--- Analysis of config changes between config_table and config_file
 WITH config_changes AS (
-  -- Records in config_file but not in config_table (ADDED)
   SELECT 
     'ADDED' as change_type,
     cf.table_name,
@@ -21,7 +19,6 @@ WITH config_changes AS (
   
   UNION ALL
   
-  -- Records in config_table but not in config_file (REMOVED - these tables get dropped)
   SELECT 
     'REMOVED' as change_type,
     ct.table_name,

@@ -26,10 +26,27 @@
         {% set template_name = row[2] %}
         {% if template_name %}
           {% set full_table = 'bronze.ein_' ~ schema_name ~ '_silver.' ~ template_name %}
-          {% set drop_sql = "DROP TABLE IF EXISTS " ~ full_table %}
-          {% do run_query(drop_sql) %}
-          {% do log("Dropped table: " ~ full_table, info=true) %}
-          {% set dropped_count = dropped_count + 1 %}
+          {% set catalog_name = 'bronze' %}
+          {% set schema_db_name = 'ein_' ~ schema_name ~ '_silver' %}
+          
+          {# Check if table exists in Databricks Unity Catalog #}
+          {% set check_table_exists_sql %}
+            SELECT COUNT(*) as table_exists 
+            FROM system.information_schema.tables 
+            WHERE table_catalog = '{{ catalog_name }}'
+              AND table_schema = '{{ schema_db_name }}'
+              AND table_name = '{{ template_name }}'
+          {% endset %}
+          
+          {% set exists_result = run_query(check_table_exists_sql) %}
+          {% if exists_result and exists_result.rows[0][0] > 0 %}
+            {% set drop_sql = "DROP TABLE IF EXISTS " ~ full_table %}
+            {% do run_query(drop_sql) %}
+            {% do log("Dropped table: " ~ full_table, info=true) %}
+            {% set dropped_count = dropped_count + 1 %}
+          {% else %}
+            {% do log("Table does not exist, skipping drop: " ~ full_table, info=true) %}
+          {% endif %}
         {% endif %}
       {% endfor %}
     {% endif %}
