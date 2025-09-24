@@ -1,0 +1,4 @@
+template_name,file_pattern,expected_columns,data_quality_rules,target_table,priority
+sales_transaction,sales_*.csv,transaction_id|product_id|amount|date,amount>0,curated_sales.transactions,1
+customer_profile,customer_*.csv,customer_id|name|email|phone,email LIKE '%@%',curated_sales.customers,2
+product_catalog,products.csv,product_id|name|category|price,price>=0,curated_products.products,1

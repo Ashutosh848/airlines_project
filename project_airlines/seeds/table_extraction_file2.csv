@@ -1,0 +1,3 @@
+source_system,source_table,target_schema,extraction_pattern,incremental_column,is_full_load
+CMS,user_profiles,raw_users,users_*.parquet,profile_updated,false
+ERP,inventory_items,raw_inventory,inventory_%Y%m%d.csv,stock_updated,false

@@ -1,0 +1,4 @@
+source_system,source_table,target_schema,extraction_pattern,incremental_column,is_full_load
+ERP,sales_orders,raw_sales,sales_orders_*.csv,last_modified_date,false
+CRM,customer_master,raw_customers,customer_export_%Y%m%d.csv,updated_at,true
+ERP,product_catalog,raw_products,products.csv,,true

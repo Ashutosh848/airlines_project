@@ -1,0 +1,4 @@
+view_name,view_definition,depends_on_tables,refresh_frequency,is_materialized
+sales_daily_summary,curated_sales.category,curated_sales.transactions,daily,true
+customer_orders,curated_sales.customers,curated_sales.transactions,hourly,false
+product_performance,curated_products.products,curated_sales.transactions,daily,true

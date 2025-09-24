@@ -1,0 +1,5 @@
+source_table,source_column,target_table,target_column,transformation_rule,data_type,is_primary_key
+raw_sales.sales_transactions,sale_amt,curated_sales.transactions,sale_amount,trim(name),decimal,false
+raw_sales.sales_transactions,sale_date,curated_sales.transactions,transaction_date,to_date(date_str),date,false
+raw_customers.customer_data,cust_name,curated_sales.customers,customer_name,trim(name),string,false
+raw_customers.customer_data,cust_id,curated_sales.customers,customer_id,,int,true
