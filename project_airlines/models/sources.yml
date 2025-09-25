@@ -29,3 +29,4 @@ sources:
           - name: template_name
           - name: status
           - name: last_updated
+      - name: json_table
